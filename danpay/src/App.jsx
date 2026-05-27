@@ -1010,7 +1010,7 @@ const { workspaceName } = useAuth();
                 </div>
               )}
 
-              {/* CREATE INVOICE */}
+              {/* CREATE INVOICES  */}
               {currentView === 'create-invoice' && (
                 <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-12 items-start text-left pb-20">
                   <form onSubmit={handleCreateInvoice} className="p-5 md:p-10 border border-[#E1E1E1] rounded-xl bg-white space-y-6 md:space-y-10">
