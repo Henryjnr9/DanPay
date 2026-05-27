@@ -1722,10 +1722,10 @@ const { workspaceName } = useAuth();
 
               {/* SETTINGS — UPDATED FOR MOBILE RESPONSIVENESS */}
               {currentView === 'settings' && (
-                <div className="w-full max-w-4xl mx-auto space-y-6 text-left pb-24 px-1 md:px-0">
+                <div className="w-full max-w-4xl mx-auto space-y-6 text-left pb-24 px-4 md:px-0">
                   <h1 className="text-2xl md:text-3xl font-bold">Settings</h1>
 
-                  <div className="flex border-b border-[#E1E1E1] overflow-x-auto -mx-4 md:mx-0 px-4 md:px-0 no-scrollbar">
+                  <div className="grid grid-cols-5 border-b border-[#E1E1E1] w-full">
                     {[
                       { id: 'general', label: 'General', icon: Palette },
                       { id: 'security', label: 'Security', icon: Shield },
@@ -1736,7 +1736,7 @@ const { workspaceName } = useAuth();
                       <button
                         key={tab.id}
                         onClick={() => setActiveSettingsTab(tab.id)}
-                        className={`pb-3 text-xs font-bold uppercase tracking-widest border-b-2 transition-all whitespace-nowrap flex items-center gap-1.5 mr-6 flex-shrink-0 ${activeSettingsTab === tab.id ? 'border-[#2563EB] text-[#2563EB]' : 'border-transparent text-[#6B7280]'}`}
+                        className={`pb-3 text-[9px] font-bold uppercase tracking-wide border-b-2 transition-all flex flex-col items-center justify-center gap-1 text-center ${activeSettingsTab === tab.id ? 'border-[#2563EB] text-[#2563EB]' : 'border-transparent text-[#6B7280]'}`}
                       >
                         {tab.label}
                       </button>
@@ -1765,11 +1765,11 @@ const { workspaceName } = useAuth();
                             </div>
                           </div>
                         </section>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-6 border-t border-[#FAFAFA]">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-6 border-t border-[#E1E1E1]">
                           <InputField label="Currency" type="select" value={settings.currency} onChange={(e) => setSettings({...settings, currency: e.target.value})} options={[{label:'USD - US Dollar', value:'USD'},{label:'EUR - Euro', value:'EUR'},{label:'GBP - British Pound', value:'GBP'}]} />
                           <InputField label="Location" value={settings.location} onChange={(e) => setSettings({...settings, location: e.target.value})} />
                         </div>
-                        <div className="pt-6 border-t border-[#FAFAFA] flex justify-end">
+                        <div className="pt-6 border-t border-[#E1E1E1] flex justify-end">
                           <button onClick={() => setCurrentView('dashboard')} style={{ backgroundColor: settings.brandColor }} className="text-white px-8 py-3.5 rounded-lg font-bold hover:opacity-90 transition-all w-full md:w-auto">Save Changes</button>
                         </div>
                       </div>
